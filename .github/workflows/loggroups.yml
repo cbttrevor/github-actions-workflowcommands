@@ -16,6 +16,7 @@ jobs:
           if (($PSitem % 5) -eq 0) {
             Write-Host -Object '::endgroup::'
             Write-Host -Object ('::group::{0}' -f ($PSItem + 1))
+          }
         }
         Write-Host -Object '::endgroup::'
 
