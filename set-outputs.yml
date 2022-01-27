@@ -1,0 +1,13 @@
+name: GitHub Actions Outputs
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  setoutputs:
+    runs-on: ubuntu-latest
+    steps:
+    - shell: pwsh
+      run: |
+        Write-Host -Object ('::set-output name=guid::{0}' -f (New-Guid).Guid)
