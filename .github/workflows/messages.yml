@@ -8,4 +8,4 @@ jobs:
   messages:
     runs-on: ubuntu-latest
     steps:
-    - run: echo '::notice::The first step of the workflow has run'
+    - run: echo '::notice file=test.ps1,line=2,col=12::The first step of the workflow has run'
