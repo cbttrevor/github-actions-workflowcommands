@@ -8,4 +8,4 @@ jobs:
   messages:
     runs-on: ubuntu-latest
     steps:
-    - 
+    - run: echo '::notice::The first step of the workflow has run'
