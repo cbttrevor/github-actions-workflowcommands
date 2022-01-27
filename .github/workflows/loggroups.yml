@@ -8,7 +8,8 @@ jobs:
   loggroups:
     runs-on: ubuntu-latest
     steps:
-    - run: echo '::group::'
-    - run: echo 'Here is a log message'
-    - run: echo '::endgroup::'
+    - run: |
+        echo '::group::'
+        echo 'Here is a log message'
+        echo '::endgroup::'
     
