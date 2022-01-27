@@ -8,4 +8,8 @@ jobs:
   messages:
     runs-on: ubuntu-latest
     steps:
+    - run: echo '::debug::Start of Workflow'
     - run: echo '::notice file=test.ps1,line=2,col=12::The first step of the workflow has run'
+    - run: echo '::warning file=test.ps1,line=2,col=12::The first step of the workflow has run'
+    - run: echo '::error file=test.ps1,line=2,col=12::The first step of the workflow has run'
+    - run: echo '::debug::End of Workflow'
