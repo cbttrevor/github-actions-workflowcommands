@@ -1,0 +1,16 @@
+name: Mask Value
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  maskvalue:
+    runs-on: ubuntu-latest
+    steps:
+    - shell: pwsh
+      run: |
+        Write-Host -Object '::add-mask::Fido the dog'
+    - shell: pwsh
+      run: |
+        Write-Host -Object 'Fido the dog is my friend'
