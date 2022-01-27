@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo '::group::'
+        echo '::group::My Application'
         echo 'Here is a log message'
+        echo 'aweawehjwj is a log message'
+        echo 'asdfHere is a log message'
         echo '::endgroup::'
     
