@@ -1,5 +1,8 @@
 name: Mask Value
 
+env:
+  PHRASE: Fido the dog
+
 on:
   push:
   workflow_dispatch:
@@ -10,7 +13,7 @@ jobs:
     steps:
     - shell: pwsh
       run: |
-        Write-Host -Object '::add-mask::Fido the dog'
+        Write-Host -Object ('::add-mask::{0}' -f $env:PHRASE)
     - shell: pwsh
       run: |
         Write-Host -Object 'Fido the dog is my friend'
