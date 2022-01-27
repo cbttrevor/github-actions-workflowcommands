@@ -8,10 +8,14 @@ jobs:
   loggroups:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo '::group::My Application'
-        echo 'Here is a log message'
-        echo 'aweawehjwj is a log message'
-        echo 'asdfHere is a log message'
-        echo '::endgroup::'
-    
+    - shell: pwsh
+      run: |
+        Write-Host -Object '::group::1'
+        1..52 | % {
+          Write-Host -Object ('This is line number {0}' -f $PSitem)
+          if (($PSitem % 5) -eq 0) {
+            Write-Host -Object '::endgroup::'
+            Write-Host -Object ('::group::{0}' -f ($PSItem + 1))
+        }
+        Write-Host -Object '::endgroup::'
+
