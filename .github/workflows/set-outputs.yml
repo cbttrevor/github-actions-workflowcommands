@@ -8,6 +8,10 @@ jobs:
   setoutputs:
     runs-on: ubuntu-latest
     steps:
-    - shell: pwsh
+    - id: guidgenerator
+      shell: pwsh
       run: |
         Write-Host -Object ('::set-output name=guid::{0}' -f (New-Guid).Guid)
+    - shell: pwsh
+      run: |
+        Write-Host -Object 'The GUID that was generated is: ${{ steps.guidgenerator.outputs.guid }}'
