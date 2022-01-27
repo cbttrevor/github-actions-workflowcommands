@@ -1,0 +1,14 @@
+name: Log Groups
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  loggroups:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo '::group::'
+    - run: echo 'Here is a log message'
+    - run: echo '::endgroup::'
+    
